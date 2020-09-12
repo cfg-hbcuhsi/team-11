@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +12,55 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
+        <script type="text/javascript">
+            function showHidden(event){
+                var optionSelect = event.value;
+                    var x = document.getElementById("Investing");
+                    var y = document.getElementById("Side-Hustle");
+                    if(opitionSelect=="2"){
+                        if (x.style.display == "none"){
+                            x.style.display = "block";
+                        }else{
+                            x.stlye.display = "none";
+                        }
+                    }else if(optionSelect == "3"){
+                        if (y.style.display === "none"){
+                            y.style.display = "block";
+                        }else{
+                            y.stlye.display = "none";
+                        }
+                    }
+
+                    if (optionSelect == "1"){
+                        alert("hi");
+                        window.location.replace("C:\Users\taram\Desktop\team-11\dist\Scholarships.html");
+                    }
+            }
+
+            function navigate(event){
+                var optionSelect=event.value;
+                if(optionSelect=="4"){
+                    alert("Proceed to Real Estate Tab");
+                    window.location.replace("C:\Users\taram\Desktop\team-11\dist\RealEstate");
+               }else if(optionSelect == "5"){
+                   alert("C:\Users\taram\Desktop\team-11\dist\Stocks");
+                   window.location.replace("C:\Users\taram\Desktop\team-11\dist\Stocks");
+               }else if(optionSelect == "6"){
+                   alert("C:\Users\taram\Desktop\team-11\dist\Commodities");
+                   window.location.replace("C:\Users\taram\Desktop\team-11\dist\Commodities");
+               }else if(optionSelect == "7"){
+                   alert("C:\Users\taram\Desktop\team-11\dist\Skill");
+                   window.location.replace("C:\Users\taram\Desktop\team-11\dist\Skill");
+              }else if(optionSelect == "8"){
+                    alert("C:\Users\taram\Desktop\team-11\dist\Startup");
+                    window.location.replace("C:\Users\taram\Desktop\team-11\dist\Startup");
+                }else if(optionSelect == "9"){
+                     alert("C:\Users\taram\Desktop\team-11\dist\SideHustle");
+                     window.location.replace("C:\Users\taram\Desktop\team-11\dist\SideHustle");
+                 }
+             }
+
+        </script>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">Goal Setter</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -109,7 +159,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Are you a...</h1>
+                        <h1 class="mt-4">What are Your Goals</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Select Option</li>
@@ -122,15 +172,45 @@
 
                                 <h2>Are you a...</h2>
 
-                                  <form action="/action_page.php">
-                                      <label for="person">Select Option</label>
-                                        <select id="person" name="cars">
-                                        <option value="HS">High School Student</option>
-                                        <option value="CS">College Student</option>
-                                        <option value="Parent">Parent</option>
+                                <div id = "person">
+                                    <select>
+                                        <option value = "a">High School Student</option>
+                                        <option value = "b">College Student</option>
+                                        <option value = "c">Parent</option>
+                                    </select>
+                                </div>
+
+
+                                <div id = "Goal">
+                                    <h2>What are your Goals?</h2>
+                                      <select onchange = 'showHidden(this)'>
+                                          <option value = "1">Graduate College Debt-Free</option>
+                                          <option value = "2">Learn to Invest</option>
+                                          <option value = "3">Build a Side Hustle</option>
                                       </select>
-                                      <a class="button" href="Goals.html">Proceed</a>
-                                    </form>
+                                  </div>
+
+                                  <div id = "Investing" style = "display:none">
+                                      <h2>What interests you most?</h2>
+                                      <select onchange = 'navigate(this)'>
+                                          <option value = "4">Real Estate</option>
+                                          <option value = "5">Stocks</option>
+                                          <option value = "6">Commodities</option>
+                                      </select>
+                                  </div>
+
+                                 <div id = "Side-Hustle" style = "display:none">
+                                     <h2>What interests you most?</h2>
+                                      <select onchange = 'navigate(this)'>
+                                          <option value = "7">Skill</option>
+                                          <option value = "8">Startup</option>
+                                          <option value = "9">Side Hustle</option>
+                                      </select>
+                                  </div>
+
+
+
+
 
                             </div>
                         </div>
