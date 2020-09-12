@@ -80,6 +80,8 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
+
+    
     
     
 
